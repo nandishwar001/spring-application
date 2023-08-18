@@ -1,9 +1,14 @@
 package com.spring.basics.learnspring.basic;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
 @Component
 @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
@@ -11,6 +16,8 @@ public class BinarySearchImpl {
 
 	@Autowired
 	private SortAlgorithm sortAlgorithm;
+
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	/*
 	 * Constructor Injection
@@ -28,6 +35,8 @@ public class BinarySearchImpl {
 //	}
 
 	public int binarySearch(int[] arr, int searchKey) {
+
+		logger.info(sortAlgorithm.toString());
 
 		int[] sortedArray = sortAlgorithm.sort(arr);
 
@@ -49,5 +58,15 @@ public class BinarySearchImpl {
 		}
 		return -1;
 
+	}
+
+	@PostConstruct
+	public void postConstruct() {
+		logger.info("post construct");
+	}
+
+	@PreDestroy
+	public void preDestroy() {
+		logger.info("pre destroy");
 	}
 }
