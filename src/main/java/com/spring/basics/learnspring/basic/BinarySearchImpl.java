@@ -7,9 +7,6 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
-
 @Component
 @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class BinarySearchImpl {
@@ -60,13 +57,13 @@ public class BinarySearchImpl {
 
 	}
 
-	@PostConstruct
-	public void postConstruct() {
-		logger.info("post construct");
-	}
-
-	@PreDestroy
-	public void preDestroy() {
-		logger.info("pre destroy");
-	}
+//	@PostConstruct
+//	public void postConstruct() {
+//		logger.info("post construct");
+//	}
+//
+//	@PreDestroy
+//	public void preDestroy() {
+//		logger.info("pre destroy");
+//	}
 }

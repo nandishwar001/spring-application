@@ -2,20 +2,22 @@ package com.spring.basics.learnspring;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import com.spring.basics.learnspring.scope.PersonDao;
 
-@SpringBootApplication
+@Configuration
+@ComponentScan
 public class ScopeSpringApplication {
 
 	private static Logger LOGGER = LoggerFactory.getLogger(ScopeSpringApplication.class);
 
 	public static void main(String[] args) {
 
-		ApplicationContext applicationContext = SpringApplication.run(ScopeSpringApplication.class, args);
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(ScopeSpringApplication.class);
 		PersonDao personDao = applicationContext.getBean(PersonDao.class);
 
 		PersonDao personDao2 = applicationContext.getBean(PersonDao.class);
