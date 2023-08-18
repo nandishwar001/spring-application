@@ -3,9 +3,9 @@ package com.spring.basics.learnspring.basic;
 import java.util.Arrays;
 
 import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 @Primary
 public class QuickSortAlgorithm implements SortAlgorithm {
 
