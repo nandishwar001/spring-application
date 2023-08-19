@@ -29,7 +29,7 @@ public class BasicSpringApplication {
 			int result = binarySearchImpl.binarySearch(new int[] { 25, 10, 15, 11, 2 }, 11);
 
 			if (result != -1) {
-				LOGGER.info("Found at ", result);
+				LOGGER.info(result + "");
 			} else {
 				System.out.println("Not found");
 			}

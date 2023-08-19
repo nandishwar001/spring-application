@@ -20,4 +20,13 @@ public class CDIBusiness {
 		this.cdiDao = cdiDao;
 	}
 
+	public int findGreatest() {
+		int maxx = Integer.MIN_VALUE;
+		int[] arr = cdiDao.getData();
+		for (int num : arr) {
+			if (num > maxx)
+				maxx = num;
+		}
+		return maxx;
+	}
 }

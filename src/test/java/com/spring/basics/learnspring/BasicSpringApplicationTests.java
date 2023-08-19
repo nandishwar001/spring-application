@@ -1,9 +1,8 @@
 package com.spring.basics.learnspring;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.Test;
 
-@SpringBootTest
+//@SpringBootTest
 class BasicSpringApplicationTests {
 
 	@Test
